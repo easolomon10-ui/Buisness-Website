@@ -1,12 +1,21 @@
+// Mark JS as active so CSS can safely set initial hidden state for fade-ins
+document.body.classList.add('js-ready');
+
 // Navbar: add scrolled class after hero
 const navbar = document.getElementById('navbar');
+const heroScroll = document.getElementById('hero-scroll');
+
 window.addEventListener('scroll', () => {
     if (window.scrollY > 60) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-});
+    // Hide scroll arrow once user starts scrolling
+    if (heroScroll) {
+        heroScroll.style.opacity = window.scrollY > 80 ? '0' : '1';
+    }
+}, { passive: true });
 
 // Mobile nav toggle
 const navToggle = document.getElementById('nav-toggle');
@@ -51,7 +60,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Fade-in on scroll
+// Fade-in on scroll (CSS handles initial hidden state via .js-ready)
 const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
@@ -65,13 +74,10 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll('.step-card, .feature-card, .pricing-card, .faq-item, .problem-stat').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
 });
 
-// Contact form success feedback
+// Contact form submit feedback
 const form = document.querySelector('.contact-form');
 if (form) {
     form.addEventListener('submit', e => {

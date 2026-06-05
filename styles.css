@@ -7,7 +7,6 @@
     --primary-light: #2d4269;
     --accent: #e85d3a;
     --accent-light: #f07a5a;
-    --green: #2d4269;
     --text: #1a1f2e;
     --text-light: #5a6175;
     --bg: #fdf9f4;
@@ -285,6 +284,7 @@ ul {
     bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
+    transition: opacity 0.5s ease;
 }
 
 .scroll-arrow {
@@ -549,6 +549,13 @@ ul {
 .step-icon {
     font-size: 2.5rem;
     margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-icon svg {
+    stroke: var(--accent);
 }
 
 .step-card h3 {
@@ -614,6 +621,17 @@ ul {
 .feature-icon {
     font-size: 2.2rem;
     margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-icon svg {
+    stroke: var(--accent);
+}
+
+.feature-card-wide .feature-icon svg {
+    stroke: var(--accent-light);
 }
 
 .feature-card h3 {
@@ -780,6 +798,7 @@ a.browser-url:hover {
     max-width: 720px;
     margin: 0 auto;
     align-items: start;
+    padding-top: 16px;
 }
 
 .pricing-card {
@@ -867,6 +886,14 @@ a.browser-url:hover {
     color: var(--text-light);
     font-style: italic;
     margin-bottom: 28px;
+}
+
+.price-compare {
+    font-size: 0.78rem;
+    color: var(--accent-light);
+    font-style: italic;
+    margin: 8px 0 0;
+    line-height: 1.5;
 }
 
 .pricing-features {
@@ -985,6 +1012,11 @@ a.browser-url:hover {
     color: var(--text-light);
     margin-bottom: 16px;
     font-size: 1.05rem;
+}
+
+.about-cta {
+    display: inline-block;
+    margin-top: 12px;
 }
 
 .about-values {
@@ -1144,6 +1176,10 @@ a.browser-url:hover {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.contact-icon svg {
+    stroke: var(--accent-light);
 }
 
 .contact-item strong {
@@ -1497,4 +1533,137 @@ a.browser-url:hover {
         text-align: center;
         gap: 8px;
     }
+}
+
+/* ===========================
+   Mid-page CTA
+   =========================== */
+.mid-cta {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.mid-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(232, 93, 58, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.mid-cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mid-cta-eyebrow {
+    color: var(--accent-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.mid-cta h2 {
+    font-family: 'Fraunces', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: white;
+    margin-bottom: 36px;
+    letter-spacing: -0.5px;
+}
+
+/* ===========================
+   Pricing Availability
+   =========================== */
+.pricing-availability {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.availability-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
+/* ===========================
+   Next Steps (Contact)
+   =========================== */
+.next-steps {
+    margin: 28px 0 36px;
+}
+
+.next-steps-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-light);
+    margin-bottom: 14px;
+}
+
+.next-steps-list {
+    list-style: none;
+    counter-reset: steps;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.next-steps-list li {
+    counter-increment: steps;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.next-steps-list li::before {
+    content: counter(steps);
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-light);
+}
+
+/* ===========================
+   JS-safe scroll fade-in
+   =========================== */
+.js-ready .step-card,
+.js-ready .feature-card,
+.js-ready .pricing-card,
+.js-ready .faq-item,
+.js-ready .problem-stat {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
