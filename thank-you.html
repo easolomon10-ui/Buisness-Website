@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're All Set | Athletefolio</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Force nav into scrolled state — no dark hero on this page */
+        .navbar {
+            background: var(--bg) !important;
+            box-shadow: var(--shadow) !important;
+        }
+        .nav-logo { color: var(--primary) !important; }
+        .nav-menu a { color: var(--text) !important; }
+        .nav-toggle span { background: var(--text) !important; }
+
+        /* Thank-you section */
+        .thankyou {
+            min-height: calc(100vh - 220px);
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            background: var(--bg);
+        }
+
+        .thankyou-inner {
+            max-width: 580px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .thankyou-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(232, 93, 58, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+        }
+
+        .thankyou-icon svg {
+            stroke: var(--accent);
+        }
+
+        .thankyou h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .thankyou-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 48px;
+        }
+
+        .thankyou-card {
+            background: var(--primary);
+            border-radius: 16px;
+            padding: 36px 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .thankyou-card-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-light);
+            margin-bottom: 20px;
+        }
+
+        .thankyou-steps-list {
+            list-style: none;
+            counter-reset: steps;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .thankyou-steps-list li {
+            counter-increment: steps;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .thankyou-steps-list li::before {
+            content: counter(steps);
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+
+        .thankyou-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .thankyou-back:hover {
+            color: var(--accent);
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Athlete<span>folio</span></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a href="/#what-you-get">What You Get</a></li>
+                <li><a href="/#demo">See a Demo</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/#contact" class="nav-cta">Get Started</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="thankyou">
+        <div class="container">
+            <div class="thankyou-inner">
+                <div class="thankyou-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+
+                <h1>You're all set!</h1>
+                <p class="thankyou-subtitle">
+                    Thanks for reaching out — I'll be in touch shortly to schedule your one-on-one call. That's where we'll go over your vision, I'll send the intake survey, and we'll get payment sorted via Venmo.
+                </p>
+
+                <div class="thankyou-card">
+                    <p class="thankyou-card-label">What happens next</p>
+                    <ol class="thankyou-steps-list">
+                        <li>Eileen reaches out to schedule your one-on-one call</li>
+                        <li>On the call: intake survey + Venmo payment</li>
+                        <li>Your site is built in 5–7 days</li>
+                        <li>Review everything together on a Zoom call</li>
+                        <li>Your site goes live — coaches find you</li>
+                    </ol>
+                </div>
+
+                <a href="/" class="thankyou-back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Back to home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="nav-logo">Athlete<span>folio</span></a>
+                    <p>Custom soccer recruitment websites for high school players looking to play at the next level.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/#how-it-works">How It Works</a></li>
+                        <li><a href="/#what-you-get">What You Get</a></li>
+                        <li><a href="/#demo">See a Demo</a></li>
+                        <li><a href="/#pricing">Pricing</a></li>
+                        <li><a href="/#contact">Get Started</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><a href="mailto:athletefolio@gmail.com">athletefolio@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Athletefolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
