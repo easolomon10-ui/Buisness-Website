@@ -829,13 +829,78 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     50% { opacity: 0.35; }
 }
 
-.pricing-grid {
+.pricing-main {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    margin-bottom: 56px;
+}
+
+.pricing-main .pricing-card {
+    max-width: 480px;
+    width: 100%;
+}
+
+.pricing-main .pricing-featured {
+    transform: none;
+}
+.pricing-main .pricing-featured:hover {
+    transform: translateY(-3px);
+}
+
+.pricing-updates-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.pricing-updates-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    max-width: 760px;
+    gap: 20px;
+    max-width: 640px;
     margin: 0 auto;
-    padding-top: 8px;
+}
+
+.pricing-update-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    background: var(--off-white);
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s var(--ease);
+}
+.pricing-update-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.pricing-update-card h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.update-price {
+    font-family: var(--display);
+    font-size: 2.8rem;
+    letter-spacing: 0.02em;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.pricing-update-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.65;
 }
 
 .pricing-card {
