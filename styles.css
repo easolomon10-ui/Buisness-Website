@@ -837,15 +837,63 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .pricing-main .pricing-card {
-    max-width: 480px;
+    max-width: 540px;
     width: 100%;
 }
 
 .pricing-main .pricing-featured {
     transform: none;
+    background: linear-gradient(160deg, #1e3357 0%, var(--navy) 65%);
+    border-top: 3px solid var(--orange);
+    box-shadow: 0 20px 60px rgba(240, 82, 46, 0.14), 0 8px 32px rgba(13, 24, 41, 0.35);
 }
 .pricing-main .pricing-featured:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 28px 72px rgba(240, 82, 46, 0.20), 0 12px 40px rgba(13, 24, 41, 0.40);
+}
+
+.pricing-tagline {
+    font-size: 0.96rem;
+    color: var(--on-dark-sub);
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.pricing-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    margin-bottom: 28px;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+}
+
+.pricing-highlight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    color: var(--on-dark-sub);
+    line-height: 1.4;
+}
+
+.ph-dot {
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+}
+
+.pricing-reassurance {
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 14px;
+    font-style: italic;
+    letter-spacing: 0.02em;
 }
 
 .pricing-updates-label {
