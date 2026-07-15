@@ -1007,6 +1007,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     color: var(--orange);
     line-height: 1;
     margin-bottom: 4px;
+    text-align: center;
 }
 
 .price-note {
