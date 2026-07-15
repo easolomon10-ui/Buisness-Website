@@ -12,6 +12,13 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
+if (heroScroll) {
+    heroScroll.addEventListener('click', () => {
+        const target = document.querySelector('.problem');
+        if (target) window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
+    });
+}
+
 // ---- Mobile nav ----
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
