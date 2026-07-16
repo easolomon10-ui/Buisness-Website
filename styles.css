@@ -1362,6 +1362,70 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .form-group select option { background: var(--navy); color: var(--on-dark); }
 .form-group textarea { resize: vertical; min-height: 80px; }
 
+.form-tos {
+    margin-bottom: 20px;
+}
+
+.tos-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+}
+
+.tos-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    margin-top: 2px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    position: relative;
+}
+
+.tos-label input[type="checkbox"]:checked {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.tos-label input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+.tos-label input[type="checkbox"]:focus {
+    outline: 2px solid rgba(240, 82, 46, 0.5);
+    outline-offset: 2px;
+}
+
+.tos-label a {
+    color: var(--orange);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.tos-label a:hover {
+    color: var(--orange-hover);
+}
+
 /* ================================================================
    FOOTER
    ================================================================ */
