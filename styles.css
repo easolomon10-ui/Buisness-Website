@@ -1366,14 +1366,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     margin-bottom: 20px;
 }
 
-.tos-label {
+.form-group .tos-label {
     display: flex;
     align-items: flex-start;
     gap: 12px;
     cursor: pointer;
     text-transform: none;
     letter-spacing: 0;
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.5);
     line-height: 1.6;
